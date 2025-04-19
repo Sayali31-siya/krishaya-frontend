@@ -42,6 +42,16 @@
       const chatbox = document.getElementById('chatbox-container');
       chatbox.style.display = chatbox.style.display === 'none' ? 'block' : 'none';
     });
+    const BACKEND_URL = "https://krishaya-chatbot-1puk.onrender.com"; // ✅ Your backend URL
+
+// When user clicks the chat button:
+fetch(`${BACKEND_URL}/chat`, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({ message: userInput }),
+})
   </script>
 </body>
 </html>
